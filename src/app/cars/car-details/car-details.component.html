@@ -1,0 +1,87 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+	<div class="card">
+		<div class="row">
+			<aside class="col-sm-5 border-right">
+				<div class="col-md-12">
+						<img class="img-fluid" src="{{car.description}}" alt="Alternate Text" />
+				</div>
+				
+			</aside>
+			<aside class="col-sm-7">
+<article class="card-body p-5">
+	<h3 class="title mb-3"> {{car.manufacturer?.name}} {{car.model?.name}} </h3>
+
+<p class="price-detail-wrap"> 
+	<span class="price h3 text-warning"> 
+		<span class="currency">Price $</span><span class="num">{{car.price}}</span>
+	</span> 
+</p> 
+<dl class="item-property">
+  <dt>Location</dt>
+  <dd><p>{{car.location}} </p></dd>
+</dl>
+<dl class="param param-feature">
+		<dt>Contact</dt>
+		<dd>{{car.contact}}</dd>
+</dl>  
+<dl class="param param-feature">
+		<dt>First Registration</dt>
+		<dd>{{car.firstRegistration}}</dd>
+</dl>  
+<dl class="param param-feature">
+  <dt>Mileage</dt>
+  <dd>{{car.mileage}}</dd>
+</dl>  
+<dl class="param param-feature">
+  <dt>Fuel</dt>
+  <dd>{{car.fuel}}</dd>
+</dl>  
+<dl class="param param-feature">
+  <dt>Cubic Capacity</dt>
+  <dd>{{car.cubicCapacity}}</dd>
+</dl>  
+<dl class="param param-feature">
+		<dt>Gearbox</dt>
+		<dd>{{car.gearbox}}</dd>
+</dl> 
+<dl class="param param-feature">
+		<dt>Additional Accessories</dt>
+		<dd>{{car.additionalAccessories}}</dd>
+</dl> 
+
+
+
+
+
+<hr>
+	<div class="row">
+		<div class="col-sm-5">
+			
+		</div> <!-- col.// -->
+		<div class="col-sm-7">
+			
+		</div> <!-- col.// -->
+	</div> <!-- row.// -->
+	<div class="row">
+	<a href="cars" class="btn btn-lg btn-success right-7"> Back </a>
+    <a href="cars/{{car.id}}/comments" class="btn btn-lg btn-primary right-7"> Show comments </a>
+	<a href="update" class="btn btn-lg btn-warning right-7"> Edit </a> 
+
+	<a href="cars" class="btn btn-lg btn-danger " (click)="deleteCar(car.id)"> Delete </a> 
+	</div>
+
+</article> <!-- card-body.// -->
+		</aside> <!-- col.// -->
+	</div> <!-- row.// -->
+</div> <!-- card.// -->
+
+
+</div>
+<!--container.//-->
+
+

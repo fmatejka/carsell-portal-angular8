@@ -1,0 +1,6 @@
+<div class="container">
+        <div class="notice notice-info" *ngFor="let manufacturer of manufacturers | async">
+                    <strong><a href="manufacturers/{{manufacturer.id}}">{{manufacturer.name}}</a></strong>
+             
+        </div>
+</div>

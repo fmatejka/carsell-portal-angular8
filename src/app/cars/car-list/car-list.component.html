@@ -1,0 +1,54 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="cars-horizon">
+    <div class="container">
+        <div class="row" id="ads">
+            <div class="col-md-9">
+                <div class="row py-2">
+                        <a href="add" class="btn btn-lg btn-success "> Add new car </a>
+                    <hr></div>
+
+                    <div class="row">
+                   <div class="col-md-7 car-image-block">
+                        <h3>Car list</h3>
+                    </div>
+                    
+                   <div class="col-md-3 ">
+                        <div class="form-group">
+                          <select class="form-control" id="sel1">
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Kms: Low to High</option>
+                          </select>
+                        </div>
+                   </div>
+                </div>
+                
+                <div class="row border" *ngFor="let car of cars | async">
+                    
+                    <div class="col-md-4 car-image-block">
+                        <img src="{{car.description}}">
+                    </div>
+                    <div class="col-md-8 card-body ">
+                        <h3>{{car.manufacturer.name}} {{car.model.name}} </h3>
+                        
+                        <h5>${{car.price}}</h5>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"> 
+                                <span class="card-detail-badge">Mileage: {{car.mileage}}</span> | <span class="card-detail-badge">First Registration: {{car.firstRegistration}}</span></li>
+                             <li class="list-inline-item">
+                                    <span class="card-detail-badge"> Fuel: {{car.fuel}} </span></li>
+                             <li class="list-inline-item">
+                                    <span class="card-detail-badge"> Location: {{car.location}} </span>|<span class="card-detail-badge">contact: {{car.contact}}</span> </li>
+                        </ul>
+                        <a class="ad-btn" href="cars/{{car.id}}">Details</a>
+                
+                    </div>               
+            </div>
+        </div>
+        
+    </div>
+</div>

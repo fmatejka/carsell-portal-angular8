@@ -1,0 +1,30 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <br>
+	<div class="row" id="ads">
+    <div class="col-md-4"  *ngFor="let car of cars | async">
+        <div class="card rounded">
+            <div class="card-image">
+                <span class="card-notify-badge">${{car.price}}</span>
+                <span class="card-notify-year">{{car.cubicCapacity}}</span>
+                <img class="img-fluid" src="{{car.description}}" alt="Alternate Text" />
+            </div>
+            <div class="card-image-overlay m-auto">
+                <span class="card-detail-badge">{{car.fuel}}</span>
+                <span class="card-detail-badge">{{car.location}}</span>
+                <span class="card-detail-badge">{{car.mileage}} Kms</span>
+            </div>
+            <div class="card-body text-center">
+                <div class="ad-title m-auto">
+                    <h5>{{car.manufacturer.name}} {{car.model.name}} </h5>
+                </div>
+                <a class="ad-btn" href="cars/{{car.id}}">View</a>
+            </div>
+        </div>
+    </div>
+
+</div>
